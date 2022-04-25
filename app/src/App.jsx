@@ -3,7 +3,7 @@ import './Styles/Home.css'
 import Tasks from './components/Tasks'
 import AddTasks from './components/AddTasks';
 import { v4 as uuidv4 } from "uuid";
-// import Header from '../src/components/Header';
+import Header from '../src/components/Header';
 import TasksDetails from './components/TasksDetails.jsx';
 import { BrowserRouter as Router , Route } from "react-router-dom";
 // -> refatorar o app , mudar as func de lugar
@@ -11,7 +11,7 @@ const App=()=> {
   const [tasks, setTasks] = useState([
     {
       id: '1',
-      title: 'estudar programacao',
+      title: 'estudar ',
       completed: false,
     },
     {
@@ -20,6 +20,8 @@ const App=()=> {
       completed: true,
     },
   ]);
+  
+
 
   const handleTaskAddition=(taskTitle)=>{
     const newTask = [...tasks,{
@@ -48,6 +50,7 @@ const App=()=> {
   return (
     <div className="container">
 				<Router>
+          <Header/>
           <Route path="/" exact render={() => (
 						<>
 							<AddTasks handleTaskAddition={handleTaskAddition} />
